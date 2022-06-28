@@ -1,0 +1,4 @@
+#Mon Mar 12 15:40:39 KST 2018
+base.0=D\:\\70.Classes\\2018-1\\RecipeAssistant\\Application\\build\\intermediates\\transforms\\dexMerger\\debug\\10
+path.0=classes.dex
+renamed.0=classes.dex

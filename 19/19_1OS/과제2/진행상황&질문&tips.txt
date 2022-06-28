@@ -1,0 +1,21 @@
+#Operating Systems Assignment 2
+
+---
+
+현재 진행상황 : copy& paste를 모듈로 작성해서 그대로 옮김, 기존에 있었던 약간의 문제점들 수정( 추후 업데이트하겠습니다)
+		+, write모듈에서 atoi,itoa 작업에 약간의 문제점 발생
+
+		mutex lock 으로 writer starvation 문제 적용 중,,
+질문
+---
+	1_ enqueue & dequeue 실행되고 reader는 임의의 위치 읽는다 이거 맞는지?
+	2_ 성능 >> 단위시간당 실행수 : timeout 명령어로 reader, writer 실행된 회수 세기만 하면 될지?
+   링크 - 
+tips
+---
+   1_ makefile 고쳐서 사용해야 함.  (오브젝트 파일명 mod_ssm)
+   2_ (중요!) file_operations 에서 write또는 read함수를 직접 구현 시, return value를 임의로 정하면 안된다. 특히, read의 경우 반드시 0을 리턴해야 한다. 그렇지 않는 경우, 내부 구현 상, read를 무한히 실행한다. //여러값을 출력하는 경우, return value를 0까지 줄어드는 iteration으로 사용해도 될듯? 
+   3_ kernel 에서는 none pram 형식을 void로 명시해야 한다.      //int read() --> int read(void) >>맞나요??
+   4_ 질문 3이 해결이 안된다면, 어쩔 수 없이 read할때는 int를 char*로 반환하고, write시에는 char*를 int로 저장한다. 이 떄, kernel에서는 atoi 대신 simple_strtol, itoa대신 sprintf를 사용한다
+
+  5_ write func에서 유저영역으로 데이터 전달하려면 너무 복잡함..

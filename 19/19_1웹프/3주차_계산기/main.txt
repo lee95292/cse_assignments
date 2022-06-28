@@ -1,0 +1,138 @@
+let op= document.getElementsByClassName('op');
+let num=document.getElementsByClassName('num');
+let func=document.getElementsByClassName('func');    //func : = , C, DEL, CE, 
+let view = document.querySelector('#view>th');
+let subview= document.querySelector('#subview>th');
+let num1="",num2="";
+let operator=null;
+let formerExp="";
+let imdOp=["rts","inv","ind"];
+let res="";
+for(var i=0;i<op.length;i++){           //operator
+    op[i].addEventListener("click",function(){
+        
+        if(num1==""){
+            num1=0;
+        }
+        if(operator&&!num2){       //입력된 연산자와 교체
+            operator=this.id;
+            subview.innerText=subview.innerText.substr(0,subview.innerHTML.length-1)+this.innerText;
+            return;
+        }
+        
+        if(imdOp.includes(this.id)){
+            num1=operate(num1,this.id);
+            view.innerHTML=num1;
+            operator=null;
+            return;
+        }else{
+            if(num2==""){
+                subview.innerHTML+=num1+this.innerText;
+            }else{
+                subview.innerHTML+=num2+this.innerText;
+                num1=operate(num1,operator,num2);
+                num2="";
+                view.innerHTML=num1;
+            }
+        
+        }
+        operator=this.id;
+    });
+}
+
+for(var i=0;i<num.length;i++){          //number
+    num[i].addEventListener("click",function(){
+        if(res!=""){                    //이전 입력값 남아있을 때, 새로운 수식 시작
+            funcOper("ca");
+        }
+        if(operator==null){             //연산자 이전 피연산자 입력
+            if(num1==""&&this.innerText=="0")return;
+            num1+=this.innerText;
+            view.innerHTML=num1;
+        }else{                          //연산자 이후 피연산자 입력
+            if(num2==""&&this.innerText=="0")return;
+            num2+=this.innerText;
+            view.innerHTML=num2;
+        }
+    });
+}
+
+for(var i=0;i<func.length;i++){         //func
+    func[i].addEventListener("click",function(){
+        funcOper(this.id);
+    });
+}
+
+function operate(num1,op,num2){
+    var opRes=0;
+    if(op=="rts"){
+        opRes=roundRes(Math.sqrt(num1));
+        subview.innerHTML="&radic;"+"("+num1+")";
+    }else if(op=="ind"){
+        opRes=roundRes(Math.pow(num1,2));
+        subview.innerHTML=num1+"<sup>2</sup>";
+    }else if(op=="inv"){
+        opRes=roundRes(1/num1);
+        subview.innerHTML="1/"+num1;
+    }else{
+        if(op=="div"){
+            opRes=roundRes(num1/num2);
+        }else if(op=="min"){
+            opRes=roundRes(num1-num2);
+        }else if(op=="plu"){
+            opRes=roundRes(num1+num2);
+        }else if(op=="min"){
+            opRes=roundRes(num1-num2);
+        }else if(op=="mul"){
+            opRes=roundRes(num1*num2);
+        }else if(op=="mod"){
+            opRes=roundRes(num1%num2);
+        }
+        // if(subview.innerHTML==""){
+        //     subview.innerHTML+=num1+op+num2;
+        // }else{
+        //     subview.innerHTML+=op+num2;
+        // }
+    }
+ 
+    return opRes;
+}
+
+function funcOper(func){
+    if(func=="eq"){
+        if(operator==null)return;
+        res=operate(num1,operator,num2);
+        num1=res;
+        num2="";
+        subview.innerHTML="";
+        operator=null;
+        view.innerHTML=res;
+        return;
+    } else if(func=="dl"){
+        if(operator==null){          
+            num1=num1.substr(0,num1.length-1);
+            view.innerHTML=num1;
+        }else{            
+            num2=num2.substr(0,num2.length-1);
+            view.innerHTML=num2;
+        }
+    }else if(func=="ca"){
+        res="";num1="";num2="";
+        operator=null;
+        subview.innerHTML="";
+        view.innerHTML="0";
+    }else if(func=="ce"){
+        if(operator==null){
+            console.log('ope');          
+            num1="";
+            view.innerHTML="";
+        }else{            
+            num2="";
+            view.innerHTML="";
+        }
+    }
+}
+function roundRes(num){
+    return Math.round(num*1000)/1000;
+}
+//초기화 : num1 : 계산결과 num2:"" op:null

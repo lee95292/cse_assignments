@@ -1,0 +1,50 @@
+*{
+    font-size: 19px;
+    font-family: sans-serif;
+}
+table{
+    background-color: #c8d6e5;
+    padding:10px 10px 10px 10px;
+    text-align: center;
+    grid-row: 1px solid;
+    border-collapse: collapse;
+}
+tr#view>th{
+    text-align: right;
+    background-color: white;
+    padding:4px 16px 16px 16px;
+}
+tr#subview>th{
+    font-size:14;
+    text-align: right;
+    background-color: white;
+    color:gray;
+    padding:4px 16px 4px 16px;
+    height:6%;
+    line-height:7px;
+}
+tr>th, tr>td{
+    padding:16px 16px 16px 16px;
+    border:4px solid white;
+    color:white;
+    width:25%;
+}
+tr>td.num:hover{
+    background-color:white;
+    color:#0abde3;
+}
+
+thead th, td.op{
+    background-color:#c8d6e5;
+    color:black;
+    font-weight: 700;
+}
+
+thead th.op:hover, td.op:hover, th.func:hover, td.func:hover{
+    background-color:#0abde3;
+    color:white;
+}
+
+sup{
+    font-size:10px;
+}

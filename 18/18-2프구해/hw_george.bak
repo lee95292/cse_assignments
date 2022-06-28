@@ -1,0 +1,364 @@
+#lang racket
+(require racket/gui/base)
+
+;Define draw base
+(define red-pen (make-object pen% "RED" 2 'solid))
+
+(define no-brush (make-object brush% "BLACK" 'transparent))
+
+(define frame (new frame% [label "paint language example"]
+                   [width 314]
+                   [height 334]))
+
+;makeing vect
+(define (make-vect x y) (cons x y))
+(define (xcor v) (car v))
+(define (ycor v) (cdr v))
+
+;calculate vector
+
+(define (+vect v1 v2)
+  (make-vect (+ (xcor v1) (xcor v2))
+             (+ (ycor v1) (ycor v2))))
+
+(define (-vect v1 v2)
+  (make-vect (- (xcor v1) (xcor v2))
+             (- (ycor v1) (ycor v2))))
+
+(define (scale-vect v s)
+  (make-vect (* s (xcor v))
+             (* s (ycor v))))
+
+;Make rect
+(define (make-rectangle origin x-axis y-axis)
+  (list origin x-axis y-axis))
+
+;Rect point
+(define (origin rect) (car rect))
+(define (x-axis rect) (cadr rect))
+(define (y-axis rect) (caddr rect))
+
+;Make segment
+(define (make-segment start-v end-v)
+  (cons start-v end-v))
+
+(define (start-segment seg)
+  (car seg))
+
+(define (end-segment seg)
+  (cdr seg))
+
+;George point
+(define p1 (make-vect .25 0))
+(define p2 (make-vect .35 .5))
+(define p3 (make-vect .3 .6))
+(define p4 (make-vect .15 .4))
+(define p5 (make-vect 0 .65))
+(define p6 (make-vect .4 0))
+(define p7 (make-vect .5 .3))
+(define p8 (make-vect .6 0))
+(define p9 (make-vect .75 0))
+(define p10 (make-vect .6 .45))
+(define p11 (make-vect 1 .15))
+(define p12 (make-vect 1 .35))
+(define p13 (make-vect .75 .65))
+(define p14 (make-vect .6 .65))
+(define p15 (make-vect .65 .85))
+(define p16 (make-vect .6 1))
+(define p17 (make-vect .4 1))
+(define p18 (make-vect .35 .85))
+(define p19 (make-vect .4 .65))
+(define p20 (make-vect .3 .65))
+(define p21 (make-vect .15 .6))
+(define p22 (make-vect 0 .85))
+
+
+;George line
+(define george-lines
+   (list (make-segment p1 p2)
+         (make-segment p2 p3)
+         (make-segment p3 p4)
+         (make-segment p4 p5)
+         (make-segment p6 p7)
+         (make-segment p7 p8)
+         (make-segment p9 p10)
+         (make-segment p10 p11)
+         (make-segment p12 p13)
+         (make-segment p13 p14)
+         (make-segment p14 p15)
+         (make-segment p15 p16)
+         (make-segment p17 p18)
+         (make-segment p18 p19)
+         (make-segment p19 p20)
+         (make-segment p20 p21)
+         (make-segment p21 p22)))
+
+;define frame-size
+(define origin1 (make-vect 0 300))
+(define x-axis1 (make-vect 300 0))
+(define y-axis1 (make-vect 0 -300))
+(define frame1 (make-rectangle origin1 x-axis1 y-axis1))
+
+
+;define Draw-line
+(define (draw-line v1 v2)
+  (send dc draw-line (xcor v1) (ycor v1) (xcor v2) (ycor v2)))
+
+;define coord-map
+(define (coord-map rect)
+  (lambda (p)
+    (+vect (origin rect)
+           (+vect (scale-vect (x-axis rect) (xcor p))
+                  (scale-vect (y-axis rect) (ycor p))))))
+
+
+
+;Rotate
+(define (rotate90 pict)
+  (lambda (rect)
+    (pict (make-rectangle
+           (+vect (origin rect)
+                  (x-axis rect))
+           (y-axis rect)
+           (scale-vect (x-axis rect) -1)))))
+
+(define (rotate180 pict)
+  (lambda (rect)
+    (pict (make-rectangle
+           (+vect (origin rect)
+                  (+vect
+                   (x-axis rect)
+                   (y-axis rect)))
+           (scale-vect (x-axis rect) -1)
+           (scale-vect (y-axis rect) -1)))))
+
+
+;repeate
+(define (repeated f n)
+  (if(= n 0)
+     (lambda (x) x)
+     (if ( = n 1)
+         f
+         (compose
+          f (repeated f (- n 1))))))
+;together
+(define (together pict1 pict2)
+  (lambda (rect)
+    (pict1 rect)
+    (pict2 rect)))
+
+
+;Beside 
+(define (beside pict1 pict2 a)
+  (lambda (rect)
+    (pict1
+     (make-rectangle
+      (origin rect)
+      (scale-vect (x-axis rect) a)
+      (y-axis rect)))
+    (pict2
+     (make-rectangle
+      (+vect
+       (origin rect)
+       (scale-vect (x-axis rect) a))
+      (scale-vect (x-axis rect) (- 1 a))
+      (y-axis rect)))))
+
+;Flip 
+(define (flip pict)
+  (lambda (rect)
+    (pict (make-rectangle
+           (+vect (origin rect) (x-axis rect))
+           (scale-vect (x-axis rect) -1)
+           (y-axis rect)))))
+
+;above 
+(define (above pict1 pict2 a)
+  ((repeated rotate90 3)
+   (beside (rotate90 pict1)
+           (rotate90 pict2) a)))
+
+
+
+;push picture
+(define (up-push pict n)
+   (if (= n 0)
+        pict
+        (above (up-push pict (- n 1))
+               pict
+               .25)))
+
+(define (right-push pict n)
+   (if (= n 0)
+        pict
+        (beside pict
+                (right-push pict (- n 1))
+                .75)))
+
+(define (corner-push pict n)
+   (if (= n 0)
+       pict
+       (above 
+           (beside
+               (up-push pict n)
+               (corner-push pict (- n 1))
+               .75)
+           (beside
+               pict
+               (right-push pict (- n 1))
+               .75)
+           .25)))
+
+;Copy picture
+(define (4pict p1 r1 p2 r2 p3 r3 p4 r4)
+  (beside
+   (above
+    ((repeated rotate90 r1) p1)
+    ((repeated rotate90 r2) p2)
+    .5)
+   (above
+    ((repeated rotate90 r3) p3)
+    ((repeated rotate90 r4) p4)
+    .5)
+   .5))
+
+(define (4same p r1 r2 r3 r4)
+  (4pict p r1 p r2 p r3 p r4))
+
+(define (square-limit pict n)
+  (4same (corner-push pict n)
+         1 2 0 3))
+
+;make-picture
+(define (make-picture seglist)
+  (lambda (rect)
+    (for-each
+     (lambda (segment)
+       (let* ((b (start-segment segment))
+              (e (end-segment segment))
+              (m (coord-map rect))
+              (b2 (m b))
+              (e2 (m e)))
+         (send dc draw-line (xcor b2) (ycor b2)
+                    (xcor e2) (ycor e2))))
+         seglist)))
+
+;Define Empty picture
+(define empty-picture (make-picture '()))
+
+;Define canvas
+(define canvas (new canvas% [parent frame]
+                    [paint-callback
+                     (lambda (canvas dc)
+                       (send dc set-pen red-pen)
+                       (send dc set-brush no-brush)
+                       (on-paint))]))
+(define dc (send canvas get-dc))
+
+;Define george
+(define george (make-picture george-lines))
+
+;Big-brother
+(define big-brother
+  (beside george
+    (above empty-picture george .5) .5))
+
+;Acrobats
+(define acrobats
+   (beside george
+           (rotate180 (flip george))
+           .5))
+
+;4bat
+(define 4bats
+     (above acrobats
+            (flip acrobats)
+            .5))
+
+(define 2-up-push
+  (up-push george 2))
+
+(define 2-right-push
+  (right-push george 2))
+
+(define 2-corner-push
+  (corner-push 4bats 2))
+
+(define 4same-george
+  (4same george 0 1 2 3))
+
+(define last-george
+  (square-limit 4bats 2))
+
+;define canvas-point
+(define canvas-left-up (make-vect 0 1))
+(define canvas-left-down (make-vect 0 0))
+(define canvas-right-up (make-vect 1 1))
+(define canvas-right-down (make-vect 1 0))
+(define canvas-top-left (make-vect 0 1))
+(define canvas-top-right (make-vect 1 1))
+(define canvas-bot-left (make-vect 0 0))
+(define canvas-bot-right (make-vect 1 0))
+
+(define canvas-line
+  (list
+   (make-segment canvas-left-up canvas-left-down)
+   (make-segment canvas-right-up canvas-right-down)
+   (make-segment canvas-top-left canvas-top-right)
+   (make-segment canvas-bot-left canvas-bot-right)))
+
+(define border (make-picture canvas-line))
+
+
+(define homework-george
+  (beside
+   (beside
+    (above
+     (above (together george (rotate90 george)) big-brother .5)
+     acrobats
+     (/ 2 3))
+    (above
+     (above
+      4bats
+      2-up-push
+      .5)
+     2-right-push (/ 2 3))
+    .5)
+   (above
+    (above 2-corner-push 4same-george
+     .5)
+    last-george
+    (/ 2 3))
+   (/ 2 3)))
+
+(define border-frame
+  (beside
+   (beside
+    (above
+     (above
+      border border
+      .5)
+     border
+     (/ 2 3))
+    (above
+     (above
+      border
+      border
+      .5)
+     border
+     (/ 2 3))
+    .5)
+   (above
+    (above
+     border
+     border
+     .5)
+    border
+    (/ 2 3))
+   (/ 2 3)))
+  
+;define on-paint
+(define (on-paint) (border-frame frame1)(homework-george frame1))
+
+
+(send frame show #t)

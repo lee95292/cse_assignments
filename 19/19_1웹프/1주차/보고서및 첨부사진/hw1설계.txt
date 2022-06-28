@@ -1,0 +1,24 @@
+-----inline ------
+
+p br h(n) text b i u del font sup sub 
+
+img - src, alt, align, border, height, width 
+
+input
+
+-----block-------
+
+blockquote 
+hr
+embed(비표준-플래시)
+audio, video ( 꼭 포함)
+form
+--inline-block---
+
+
+----attribute----
+text(글자색)
+bgcolor (배경)
+align
+(font의 attr) - size color face
+center

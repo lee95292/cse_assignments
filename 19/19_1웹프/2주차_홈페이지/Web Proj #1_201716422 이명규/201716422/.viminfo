@@ -1,0 +1,845 @@
+# 이 viminfo 파일은 빔이 만든 것입니다 Vim 7.4.
+# 조심만 한다면 고칠 수도 있습니다!
+
+# 이 파일이 저장되었을 때의 'encoding'의 값
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~H
+# Last Search Pattern:
+~MSle0~/asdasd
+
+# 명령 줄 히스토리 (새것부터 오래된 것 순):
+:q
+:wq
+:w
+:.q!
+:q!
+:Q
+:set ts=2
+:WQ
+:set ts=4
+:set ts 2
+:set ts:2;
+:set ts 2;
+:set ts=2;
+:wqa
+:ㅈㅂ
+:/Suc/
+:qw
+:ㅈ
+:.!g
+:./!g
+:/BUF_SIZE/
+:/ \\ /
+:/ ASD/
+:/    /
+:/
+://
+:/ /
+:/argv/
+:N
+:n
+:i
+:ii
+:a
+
+# 찾을 문자열 히스토리 (새것부터 오래된 것 순):
+?/open/
+?/asdasd/
+?/i/
+?/rfp/
+?/*
+?/fork
+? \<ftell\>
+?//
+?///
+?/printf/
+?/test/
+?/perror/
+?/Succ
+? Suc
+?/file/
+?/suc/
+?/success/
+? \<malloc\>
+? !g
+? BUF_SIZE
+?/asd/
+?/ / /
+?  \\ 
+?/\/
+?/sad^
+?/asdasd/s
+?/asdasd
+?/fopen/
+?/create
+?  ASD
+?     
+?  
+?/fd/
+? argv
+
+# 표현 히스토리 (새것부터 오래된 것 순):
+
+# 입력 줄 히스토리 (새것부터 오래된 것 순):
+
+# 입력 줄 히스토리 (새것부터 오래된 것 순):
+
+# 레지스터:
+"0	CHAR	0
+	s
+"1	CHAR	0
+	 wfd=open(oOpt,O_CREAT|O_APPEND)
+	
+"2	CHAR	0
+	  if(oOpt==NULL)
+	  {
+	    perror("writting file cannot open");
+	    exit(1);
+	  }else
+	     wfp=fopen(oOpt,"a"); 
+"3	CHAR	0
+	  if(fOpt==NULL)  //fileopen 에러처리 및 파일 열기
+	  {
+	    perror("source file cannot open");
+	    exit(1);
+	  }else
+	    rfp=fopen(fOpt,"r");  
+	  
+	  if(oOpt==NULL)
+	  {
+	    perror("writting file cannot open");
+	    exit(1);
+	  }
+	     wfp=fopen(oOpt,"w"); 
+"4	CHAR	0
+	 printf("ppid %d  pid %d\n------\n",getppid(),getpid());
+	
+"5	CHAR	0
+	printf("ppid %d  pid %d\n------\n",getppid(),getpid());
+	
+"6	CHAR	0
+	  struct mbuf mesg;
+	  ket=ftok("ketfile",10);
+		msgid=msgget(key,IPC_CREAT|0644);
+		if(msgid==-1){
+			perror("msgget");
+			exit(1);
+		}
+		mesg.mtype=1;
+		strcopy(mseg.mtext,"message Q test\n");
+		if(msgsnd(msgid,(void*)&mesg,80,IPC_NOWAIT)==-1){
+			perror("msgsnd")
+			exit(2);
+		}
+	}
+"7	CHAR	0
+	break;
+	      case c:
+	      break;   
+	      case c:
+	      break;
+	      case c:
+	      break;
+	      case c:
+	      break;
+	
+"8	CHAR	0
+	 // time.h의 ctime 함수로 시간정보를 포멧팅해줍니다.  
+	 
+"9	CHAR	0
+	 //printf("ctime:%x\natime:%x\nmtime:%x\n",(int)buf.st_ctime,(int)buf.st_atime,(int)buf.st_mtime);
+	 
+"q	CHAR	0
+	:
+""-	CHAR	0
+	oOpt==NULL
+
+# 파일 마크:
+'0  1  0  /usr/local/tomcat7/sexPie.jpeg
+'1  7  9  /usr/local/tomcat7/webapps/201716422/index.html
+'2  1  0  ~/unix/project/gobServer5.c
+'3  34  6  ~/fuck.c
+'4  395  0  ~/unix/project/gobServer5.c
+'5  21  1  ~/fuck.c
+'6  4  20  ~/fuck.c
+'7  16  20  ~/unix/project/gobServer5.c
+'8  1  0  gobServer5/c
+'9  1  0  ~/unix/exampl/sserver.c
+
+# 점프목록 (새것이 먼저):
+-'  1  0  /usr/local/tomcat7/sexPie.jpeg
+-'  7  9  /usr/local/tomcat7/webapps/201716422/index.html
+-'  1  0  /usr/local/tomcat7/webapps/201716422/index.html
+-'  1  0  ~/unix/project/gobServer5.c
+-'  15  0  ~/unix/project/gobServer5.c
+-'  17  0  ~/unix/project/gobServer5.c
+-'  20  0  ~/unix/project/gobServer5.c
+-'  24  0  ~/unix/project/gobServer5.c
+-'  33  0  ~/unix/project/gobServer5.c
+-'  48  0  ~/unix/project/gobServer5.c
+-'  50  0  ~/unix/project/gobServer5.c
+-'  55  0  ~/unix/project/gobServer5.c
+-'  65  0  ~/unix/project/gobServer5.c
+-'  80  0  ~/unix/project/gobServer5.c
+-'  84  0  ~/unix/project/gobServer5.c
+-'  93  0  ~/unix/project/gobServer5.c
+-'  114  0  ~/unix/project/gobServer5.c
+-'  146  0  ~/unix/project/gobServer5.c
+-'  166  0  ~/unix/project/gobServer5.c
+-'  169  0  ~/unix/project/gobServer5.c
+-'  172  0  ~/unix/project/gobServer5.c
+-'  200  0  ~/unix/project/gobServer5.c
+-'  206  0  ~/unix/project/gobServer5.c
+-'  209  0  ~/unix/project/gobServer5.c
+-'  214  0  ~/unix/project/gobServer5.c
+-'  216  0  ~/unix/project/gobServer5.c
+-'  219  0  ~/unix/project/gobServer5.c
+-'  224  0  ~/unix/project/gobServer5.c
+-'  233  0  ~/unix/project/gobServer5.c
+-'  242  0  ~/unix/project/gobServer5.c
+-'  248  0  ~/unix/project/gobServer5.c
+-'  254  0  ~/unix/project/gobServer5.c
+-'  260  0  ~/unix/project/gobServer5.c
+-'  266  0  ~/unix/project/gobServer5.c
+-'  272  0  ~/unix/project/gobServer5.c
+-'  277  0  ~/unix/project/gobServer5.c
+-'  283  0  ~/unix/project/gobServer5.c
+-'  289  0  ~/unix/project/gobServer5.c
+-'  331  0  ~/unix/project/gobServer5.c
+-'  348  0  ~/unix/project/gobServer5.c
+-'  359  0  ~/unix/project/gobServer5.c
+-'  363  0  ~/unix/project/gobServer5.c
+-'  385  0  ~/unix/project/gobServer5.c
+-'  390  0  ~/unix/project/gobServer5.c
+-'  394  0  ~/unix/project/gobServer5.c
+-'  395  5  ~/unix/project/gobServer5.c
+-'  34  6  ~/fuck.c
+-'  2  0  ~/unix/project/gobServer5.c
+-'  21  1  ~/fuck.c
+-'  4  0  ~/fuck.c
+-'  1  0  ~/unix/project/gobServer5.c
+-'  15  0  ~/unix/project/gobServer5.c
+-'  17  0  ~/unix/project/gobServer5.c
+-'  20  0  ~/unix/project/gobServer5.c
+-'  24  0  ~/unix/project/gobServer5.c
+-'  33  0  ~/unix/project/gobServer5.c
+-'  48  0  ~/unix/project/gobServer5.c
+-'  50  0  ~/unix/project/gobServer5.c
+-'  55  0  ~/unix/project/gobServer5.c
+-'  65  0  ~/unix/project/gobServer5.c
+-'  80  0  ~/unix/project/gobServer5.c
+-'  84  0  ~/unix/project/gobServer5.c
+-'  93  0  ~/unix/project/gobServer5.c
+-'  114  0  ~/unix/project/gobServer5.c
+-'  146  0  ~/unix/project/gobServer5.c
+-'  166  0  ~/unix/project/gobServer5.c
+-'  169  0  ~/unix/project/gobServer5.c
+-'  172  0  ~/unix/project/gobServer5.c
+-'  200  0  ~/unix/project/gobServer5.c
+-'  206  0  ~/unix/project/gobServer5.c
+-'  209  0  ~/unix/project/gobServer5.c
+-'  214  0  ~/unix/project/gobServer5.c
+-'  216  0  ~/unix/project/gobServer5.c
+-'  219  0  ~/unix/project/gobServer5.c
+-'  224  0  ~/unix/project/gobServer5.c
+-'  233  0  ~/unix/project/gobServer5.c
+-'  242  0  ~/unix/project/gobServer5.c
+-'  248  0  ~/unix/project/gobServer5.c
+-'  254  0  ~/unix/project/gobServer5.c
+-'  260  0  ~/unix/project/gobServer5.c
+-'  266  0  ~/unix/project/gobServer5.c
+-'  272  0  ~/unix/project/gobServer5.c
+-'  277  0  ~/unix/project/gobServer5.c
+-'  283  0  ~/unix/project/gobServer5.c
+-'  289  0  ~/unix/project/gobServer5.c
+-'  331  0  ~/unix/project/gobServer5.c
+-'  348  0  ~/unix/project/gobServer5.c
+-'  359  0  ~/unix/project/gobServer5.c
+-'  363  0  ~/unix/project/gobServer5.c
+-'  385  0  ~/unix/project/gobServer5.c
+-'  390  0  ~/unix/project/gobServer5.c
+-'  394  0  ~/unix/project/gobServer5.c
+-'  395  5  ~/unix/project/gobServer5.c
+-'  34  6  ~/fuck.c
+-'  2  0  ~/unix/project/gobServer5.c
+-'  21  1  ~/fuck.c
+-'  4  0  ~/fuck.c
+-'  7  9  /usr/local/tomcat7/webapps/201716422/index.html
+
+# 파일내의 마크 히스토리 (새것부터 오래된 순):
+
+> /usr/local/tomcat7/sexPie.jpeg
+	"	1	0
+
+> /usr/local/tomcat7/webapps/201716422/index.html
+	"	7	9
+	^	7	10
+	.	7	9
+	+	9	6
+	+	5	1
+	+	3	0
+	+	5	7
+	+	4	22
+	+	8	7
+	+	7	9
+
+> ~/unix/project/gobServer5.c
+	"	1	0
+	^	294	0
+	.	294	0
+	+	16	20
+	+	17	0
+	+	16	20
+	+	272	0
+	+	294	0
+
+> ~/fuck.c
+	"	34	6
+	^	35	4
+	.	31	2
+	+	9	1
+	+	22	24
+	+	23	22
+	+	22	6
+	+	23	6
+	+	12	5
+	+	10	6
+	+	21	2
+	+	22	1
+	+	23	1
+	+	25	2
+	+	39	0
+	+	11	30
+	+	24	41
+	+	12	1
+	+	20	0
+	+	13	9
+	+	6	23
+	+	20	16
+	+	7	15
+	+	20	27
+	+	13	33
+	+	14	2
+	+	19	0
+	+	15	5
+	+	14	3
+	+	14	2
+	+	15	46
+	+	16	3
+	+	18	1
+	+	18	22
+	+	38	0
+	+	25	52
+	+	26	3
+	+	28	1
+	+	27	18
+	+	33	3
+	+	35	1
+	+	34	20
+	+	35	27
+	+	2	12
+	+	5	0
+	+	7	17
+	+	6	23
+	+	7	24
+	+	24	8
+	+	15	11
+	+	25	54
+	+	28	33
+	+	35	35
+	+	18	33
+	+	32	3
+	+	33	3
+	+	34	4
+	+	35	3
+	+	30	15
+	+	35	40
+	+	36	1
+	+	31	2
+
+> ~/unix/exampl/sserver.c
+	"	1	0
+
+> /tmp/sserver.c
+	"	43	0
+
+> ~/unix/exampl/ex1022.c
+	"	49	0
+	^	34	1
+	.	34	1
+	+	10	1
+	+	11	9
+	+	21	1
+	+	19	48
+	+	20	11
+	+	48	10
+	+	5	17
+	+	28	3
+	+	31	1
+	+	30	11
+	+	33	0
+	+	40	1
+	+	39	1
+	+	38	9
+	+	7	0
+	+	6	11
+	+	32	17
+	+	32	17
+	+	32	15
+	+	20	9
+	+	26	1
+	+	25	11
+	+	47	19
+	+	14	11
+	+	43	6
+	+	44	21
+	+	41	20
+	+	43	2
+	+	44	2
+	+	47	1
+	+	45	10
+	+	45	1
+	+	46	0
+	+	45	3
+	+	44	1
+	+	43	2
+	+	7	17
+	+	44	22
+	+	43	2
+	+	44	21
+	+	34	21
+	+	34	63
+	+	34	62
+	+	17	1
+	+	15	0
+	+	17	1
+	+	15	2
+	+	34	1
+
+> ~/unix/exampl/mqcreate.c
+	"	1	0
+
+> ~/unix/lab3/lab3.c
+	"	149	6
+	^	154	1
+	.	145	54
+	+	151	19
+	+	125	0
+	+	142	10
+	+	100	10
+	+	97	3
+	+	99	3
+	+	99	2
+	+	98	35
+	+	100	1
+	+	99	11
+	+	102	10
+	+	100	21
+	+	100	3
+	+	104	2
+	+	104	2
+	+	103	0
+	+	102	3
+	+	103	0
+	+	101	0
+	+	106	8
+	+	123	47
+	+	150	36
+	+	122	68
+	+	146	67
+	+	147	14
+	+	150	31
+	+	122	70
+	+	146	71
+	+	142	15
+	+	119	15
+	+	123	60
+	+	153	3
+	+	123	36
+	+	122	41
+	+	125	0
+	+	123	3
+	+	122	63
+	+	122	27
+	+	154	0
+	+	145	26
+	+	122	26
+	+	122	58
+	+	146	65
+	+	122	38
+	+	122	37
+	+	124	41
+	+	28	3
+	+	82	0
+	+	151	14
+	+	123	30
+	+	146	67
+	+	125	16
+	+	151	16
+	+	124	42
+	+	150	39
+	+	123	29
+	+	124	15
+	+	118	23
+	+	141	22
+	+	118	22
+	+	151	14
+	+	141	15
+	+	118	15
+	+	146	7
+	+	150	6
+	+	149	7
+	+	147	0
+	+	141	22
+	+	142	13
+	+	118	22
+	+	119	13
+	+	118	15
+	+	117	6
+	+	141	15
+	+	140	6
+	+	125	0
+	+	151	0
+	+	4	0
+	+	3	1
+	+	4	2
+	+	5	3
+	+	2	15
+	+	3	16
+	+	4	83
+	+	13	57
+	+	14	56
+	+	22	54
+	+	23	0
+	+	22	57
+	+	23	0
+	+	46	11
+	+	27	35
+	+	34	101
+	+	83	40
+	+	90	49
+	+	109	72
+	+	116	67
+	+	122	52
+	+	139	63
+	+	145	54
+
+> ~/unix/lab3/lab4.c
+	"	177	0
+	^	172	4
+	.	172	3
+	+	192	37
+	+	192	14
+	+	192	41
+	+	1	8
+	+	1	0
+	+	1	0
+	+	215	0
+	+	213	15
+	+	213	43
+	+	213	59
+	+	213	52
+	+	214	0
+	+	198	10
+	+	199	0
+	+	203	8
+	+	199	19
+	+	211	9
+	+	213	0
+	+	204	19
+	+	199	20
+	+	199	63
+	+	202	21
+	+	199	43
+	+	203	0
+	+	208	26
+	+	204	68
+	+	204	67
+	+	208	0
+	+	204	31
+	+	199	20
+	+	195	40
+	+	202	0
+	+	203	0
+	+	204	24
+	+	197	3
+	+	204	24
+	+	208	0
+	+	207	34
+	+	212	17
+	+	207	12
+	+	209	23
+	+	192	14
+	+	202	42
+	+	201	14
+	+	202	12
+	+	207	34
+	+	206	15
+	+	207	12
+	+	208	11
+	+	209	26
+	+	210	11
+	+	192	43
+	+	1	32
+	+	193	0
+	+	192	5
+	+	1	4
+	+	1	2
+	+	1	0
+	+	1	42
+	+	1	0
+	+	1	1
+	+	179	1
+	+	179	6
+	+	180	0
+	+	181	0
+	+	181	74
+	+	182	0
+	+	1	3
+	+	1	7
+	+	216	0
+	+	227	0
+	+	215	6
+	+	1	126
+	+	1	57
+	+	1	119
+	+	1	19
+	+	1	18
+	+	1	69
+	+	1	30
+	+	1	0
+	+	1	83
+	+	1	3
+	+	1	93
+	+	1	130
+	+	1	113
+	+	180	88
+	+	181	146
+	+	182	93
+	+	185	113
+	+	189	38
+	+	185	28
+	+	189	35
+	+	192	154
+	+	195	42
+	+	197	24
+	+	1	0
+	+	1	0
+	+	1	0
+	+	143	8
+	+	172	3
+
+> ~/unix/lab3/sourceFile
+	"	2	0
+	^	2	30
+	.	2	29
+	+	3	7
+	+	1	9
+	+	2	29
+
+> ~/unix/lab3/des
+	"	1	0
+
+> ~/unix/lab3/outFile
+	"	1	0
+	^	2	9
+	.	2	8
+	+	1	10
+	+	2	8
+
+> ~/unix/lab3/decript
+	"	1	0
+
+> ~/unix/lab3/lab32.c
+	"	155	0
+	^	155	0
+	.	155	24
+	+	133	6
+	+	124	56
+	+	120	19
+	+	124	4
+	+	126	0
+	+	123	4
+	+	122	4
+	+	100	17
+	+	124	4
+	+	122	22
+	+	123	0
+	+	164	0
+	+	162	3
+	+	164	3
+	+	163	57
+	+	164	0
+	+	155	29
+	+	144	0
+	+	136	6
+	+	157	3
+	+	134	12
+	+	100	19
+	+	101	0
+	+	103	28
+	+	107	5
+	+	100	18
+	+	134	13
+	+	95	18
+	+	93	16
+	+	16	17
+	+	125	3
+	+	124	13
+	+	87	0
+	+	87	0
+	+	88	0
+	+	107	7
+	+	94	23
+	+	26	0
+	+	21	9
+	+	107	2
+	+	105	14
+	+	21	8
+	+	105	30
+	+	106	11
+	+	94	27
+	+	95	0
+	+	137	6
+	+	138	6
+	+	139	6
+	+	140	6
+	+	141	6
+	+	142	8
+	+	124	21
+	+	122	41
+	+	144	29
+	+	21	6
+	+	158	18
+	+	108	0
+	+	141	12
+	+	157	2
+	+	158	19
+	+	159	14
+	+	144	24
+	+	136	55
+	+	144	41
+	+	149	18
+	+	149	17
+	+	150	0
+	+	144	46
+	+	148	20
+	+	148	22
+	+	144	26
+	+	127	29
+	+	129	0
+	+	155	23
+	+	150	12
+	+	151	4
+	+	155	12
+	+	144	48
+	+	143	14
+	+	144	0
+	+	147	0
+	+	144	15
+	+	143	81
+	+	144	17
+	+	143	45
+	+	146	7
+	+	145	41
+	+	143	17
+	+	145	12
+	+	144	47
+	+	144	6
+	+	145	40
+	+	146	22
+	+	154	7
+	+	156	9
+	+	155	4
+	+	116	19
+	+	117	26
+	+	155	24
+
+> ~/unix/lab3/lab4
+	"	1	0
+
+> ~/unix/exampl/mqrec.c
+	"	17	1
+	^	10	2
+	.	10	1
+	+	25	0
+	+	14	0
+	+	14	18
+	+	13	14
+	+	20	1
+	+	19	9
+	+	23	10
+	+	22	42
+	+	10	1
+
+> ~/unix/exampl/mqcrete.c
+	"	1	0
+	^	15	15
+	.	15	14
+	+	15	25
+	+	27	1
+	+	16	34
+	+	23	28
+	+	14	16
+	+	21	3
+	+	23	49
+	+	26	1
+	+	24	18
+	+	25	9
+	+	10	2
+	+	24	18
+	+	22	11
+	+	15	4
+	+	8	10
+	+	22	5
+	+	15	14
+
+> ~/unix/exampl/mqcreat.c
+	"	1	0
+
+> ~/unix/exampl/ex1022_2.c
+	"	16	0
+	^	16	1
+	.	16	0
+	+	66	0
+	+	34	4
+	+	48	3
+	+	50	2
+	+	48	3
+	+	34	1
+	+	48	17
+	+	50	2
+	+	49	10
+	+	51	55
+	+	51	126
+	+	51	148
+	+	57	2
+	+	51	138
+	+	56	12
+	+	52	24
+	+	55	2
+	+	54	15
+	+	32	0
+	+	66	0
+	+	32	1
+	+	35	2
+	+	47	0
+	+	47	0
+	+	41	33
+	+	42	3
+	+	47	0
+	+	44	2
+	+	43	4
+	+	41	22
+	+	43	15
+	+	46	9
+	+	15	11
+	+	41	7
+	+	15	3
+	+	16	6
+	+	46	1
+	+	41	34
+	+	16	0

@@ -1,0 +1,99 @@
+
+#navFrame{
+    display:flex;
+    flex-direction: row;
+    margin: 30px 20px 30px 20px;
+    height:17%;
+}
+a.navContent:visited{
+    color:black;
+}
+
+hr.menuHr{
+    height:2px;
+    background-color:#0984e3;
+    color:#0984e3;
+}
+
+hr.lrHr{
+    width:2px;
+    background-color: #778beb;
+    margin: 0 0 0 0;
+}
+a.navContent{
+    margin: 20px 20px 20px 20px;
+    text-decoration: none;
+    color:black;
+    width:20%;
+    height:60%;
+    text-align: center;
+    line-height: 25px;
+    padding:20px 2px 0 2px;
+    font-size:19px;
+}
+
+a.navContent:hover{
+    background-color:#0984e3;
+    color:white;
+    transition: 0.25s;
+}
+
+/* Main Element */
+
+.content{
+    margin:40px 60px 20px 60px;
+}
+#favorit{
+    font-size:23px;
+    text-align: center;
+}
+
+
+/* Card Element*/
+
+.card{
+    border: solid 3px;
+    border-radius: 7px;
+    width:70%;
+    height:40%;
+    margin: 10px 15% 10px 15%;
+    text-align:center;
+    color:white;
+    background-color: #74b9ff;
+    padding:10px 10px 20px 10px;
+}
+
+.LRcard{
+    border: solid 3px;
+    border-radius: 7px;
+    width:36%;
+    height:40%;
+    margin: 10px 15px 10px 15px;
+    text-align:center;
+    color:black;
+    background-color: #3dc1d3;
+    padding:10px 10px 20px 10px;
+}
+
+.title{
+    font-size:27px;
+}
+
+.divLR{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin:30px 10px 10px 10px;
+}
+
+.divide{
+    display:flex;
+    line-height:30px;
+}
+
+.tagEx{
+    width:100%;
+    height:60%;
+    margin:10px 15px 30px;
+    border:3px solid #0984e3;
+}

@@ -1,0 +1,53 @@
+<html>
+    <head>
+   		<meta charset="utf-8"/>
+        <link rel="stylesheet" href="./main.css">
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <div class="title">
+            2019년도 중간 강의평가    
+        </div>
+        <div class="container">
+            <form action="saveSurvey.jsp" method="post"> 
+                <!-- form start -->
+                <h2>* 1. 인적사항</h2>
+                <hr>
+                <div class="card">
+                    <p class="article"><strong>1-1.</strong> Name</p>  
+                    <input type="text" placeholder="이름" autocomplete="off" name="name" required> 
+                </div>
+                <div class="card">    
+                    <p class="article"><strong>* 1-2.</strong> Major</p> <input type="text" placeholder="전공"name = "major" autocomplete="off" required>
+                </div>
+                <div class="card">
+                    <p class="article"><strong>* 1-3.</strong> Subject</p>  
+                    <select name="Subject" style="width:100%" required="required">
+                        <option value="WP">WebProgramming</option>
+                        <option value="Algo">Algoritm</option>
+                        <option value="Mad">Microprocessor Application Design(MAD)</option>
+                        <option value="PL">Programming Language</option>
+                        <option value="FS">File Structure</option>
+                        <option value="OS">Operating System</option>
+                    </select>
+                </div>
+
+                <h2>* 2. 설문조사</h2>
+                <hr>
+                <div class="card">
+                    <p class="article"><strong>* 2-1 난이도</strong></p>
+                    <textarea name="difficulty" cols="60" rows="6" placeholder="수업의 속도와 난이도" maxlenght="40" required></textarea>
+                </div>
+
+                <div class="card">
+                    <p class="article"><strong>* 2-3 과제</strong></p>
+                    <textarea name="assignment" cols="60" rows="6" placeholder="과제의 양과 적절성" maxlenght="40" required></textarea>
+                </div>
+                <div class="formFooter">
+                    <button type="submit">submit</button>
+                </div>
+                <!-- form end -->
+            </form>
+        </div>
+    </body>
+</html>

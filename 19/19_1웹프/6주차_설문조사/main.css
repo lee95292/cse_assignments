@@ -1,0 +1,57 @@
+*{
+    font-family: 'san-serif','italic';
+    background-color: #74b9ff;
+}
+div.title{
+    background-color: black;
+    color:white;
+    font-size:32px;
+    padding:20px;
+    text-align: center;
+}
+
+div.container{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+form{
+    width:60%;
+    background-color: white;
+    border-radius: 1em;
+    padding: 15px;
+    box-shadow: 7px 7px 4px 4px grey;
+    font-size:20px;
+}
+form *{
+    background-color: white;
+}
+form>.card{
+    width:40%;
+    padding:10px;
+}
+
+form>.card>input[type="text"]{
+    border-radius: 3em;
+    border-style: hidden;
+}
+
+form>.card>input:focus{
+    border: none;
+}
+.card>select{
+    width:50%;
+    font-size: 16px;
+    color:black;
+}
+
+
+
+div.comp{
+    width: 60%;
+    text-align: center;
+    background-color:black;
+    color:white;
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+*{
+	text-align: center;
+}
+
+intro{
+	background-color:
+}
+guguTable{
+	
+}
+
+input{
+	width:15%;
+	height:10%;
+	font-size: 23px;
+}
+
+input:hover{
+	border:2px solid blue;
+}

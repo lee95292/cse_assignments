@@ -1,0 +1,40 @@
+.content{
+    display:flex;
+    justify-content: center;
+}
+.page{
+    width:60%;
+    border: 2px solid black;
+    border-radius: 2em;
+    padding: 15px 20px 20px 10px;
+
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page>.card {
+    width:40%;
+    border: 0.5px solid grey;
+    padding: 10px 5px 5px 5px;
+    margin: 15px 20px 10px 20px;
+}
+
+.page> .card> .tag{    
+    text-align: center;
+}
+
+.page> .card> .tag> .name{
+    font-size: 12px;
+    font-style: italic;
+}
+
+.page> .card> .tag> .title{
+    font-size: 21px;
+
+}
+#addBtn{
+	margin: 20px 10px 20px 10px;
+    position: absolute;
+    right:20%;
+}

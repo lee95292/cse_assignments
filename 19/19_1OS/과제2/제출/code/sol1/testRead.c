@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<fcntl.h>
+#include<stdlib.h>
+#define MAX_LEN (11)
+
+int main(){
+	
+	int fd=open("/proc/kboard/reader",O_RDONLY);
+	char buf[MAX_LEN];
+	int n;
+	int readRes;
+	
+	while(1){
+		readRes = read(fd,buf,sizeof(buf));
+		n=atoi(buf);
+		if(n==-1){
+			if(n==-1){
+				//printf("now ring buffer empty\n");
+			}
+		}else{
+			//printf("read fail\n");
+		}
+		//printf("dequeue %d\n",n);
+	}
+
+
+
+	close(fd);
+}
